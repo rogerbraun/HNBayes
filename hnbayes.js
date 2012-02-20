@@ -170,7 +170,7 @@ filter = new BayesFilter(true) // Use local storage;
     var target = $(event.target);
     var link = target.siblings("a")[1];
     alert(link.href);
-  }
+  });
   
   $(".title:nth-child(3) a").after(rate);
   $(".title:nth-child(3) a").after(dislike);
