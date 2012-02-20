@@ -34,12 +34,16 @@ BayesFilter = function(useLocalStorage) {
   this.loadFromLocalStorage = function(){
     var data = window.localStorage.getItem("BayesFilterData");
     if(data){
-      this.data = JSON.parse(data);
+      savedData = JSON.parse(data);
+      this.data = savedData.data;
+      this.klasses = savedData.klasses;
+      this.documentCount = savedData.documentCount;
     }
   }
 
   this.saveToLocalStorage = function(){
-    var dataJSON = JSON.stringify(this.data);
+    var savedData = {data: this.data, klasses: this.klasses, documentCount: this.documentCount}
+    var dataJSON = JSON.stringify(savedData);
     window.localStorage.setItem("BayesFilterData", dataJSON);
   }
 
