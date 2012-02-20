@@ -224,7 +224,9 @@ filter = new BayesFilter(true) // Use local storage;
   var rate_all = $("<a href='#'>Rate all stories</a>");
 
   rate_all.bind("click", function(){
-    $(".rate").trigger("click");
+    $(".rate").each(function(index, element){
+      element.trigger("click");
+    });
   });
 
   $("a:nth-child(8)").after(rate_all);
