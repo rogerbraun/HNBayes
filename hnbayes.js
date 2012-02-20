@@ -194,14 +194,16 @@ filter = new BayesFilter(true) // Use local storage;
   like.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0];
-    link.siblings(".training").remove();
+    target.siblings(".training").remove();
+    target.remove();
     trainFromUrl(link, "good");
   });
   
   dislike.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0];
-    link.siblings("training").remove();
+    target.siblings("training").remove();
+    target.remove();
     trainFromUrl(link, "bad");
   });
 
