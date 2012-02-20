@@ -225,7 +225,7 @@ filter = new BayesFilter(true) // Use local storage;
 
   rate_all.bind("click", function(){
     $(".rate").each(function(index, element){
-      element.trigger("click");
+      $(element).trigger("click");
     });
   });
 
