@@ -165,11 +165,21 @@ filter = new BayesFilter(true) // Use local storage;
   var like = $("<button class='like'>Like!</button>");
   var dislike = $("<button class='dislike'>Dislike!</button>");
   var rate = $("<button class='rate'>Rate!</button>");
+  var rate_span = $("<span class='rate_result'></span>");
 
   var trainFromUrl = function(url, klass){
     var request = "http://viewtext.org/api/text?url=" + encodeURI(url) + "&callback=?";
     $.getJSON(request, function(response){
       filter.train(response.content, klass);
+    });
+  }
+
+  var rateFromUrl = function(url, target){
+    var request = "http://viewtext.org/api/text?url=" + encodeURI(url) + "&callback=?";
+    $.getJSON(request, function(response){
+      var good = filter.categoryProbability(response.content, "good");
+      var bad = filter.categoryProbability(response.content, "bad");
+      target.innerHTML = "Good: " + good + ", Bad: " + bad;
     });
   }
 
@@ -179,6 +189,19 @@ filter = new BayesFilter(true) // Use local storage;
     trainFromUrl(link, "good");
   });
   
+  dislike.bind("click", function(event) {
+    var target = $(event.target);
+    var link = target.siblings("a")[0];
+    trainFromUrl(link, "bad");
+  });
+
+  rate.bind("click", function(){
+    var target = $(event.target);
+    var link = target.siblings("a")[0];
+    var result_span = target.siblings("rate_result")[0];
+    rateFromUrl(link, result_span);
+  });
+
   $(".title:nth-child(3) a").after(rate);
   $(".title:nth-child(3) a").after(dislike);
   $(".title:nth-child(3) a").after(like);
