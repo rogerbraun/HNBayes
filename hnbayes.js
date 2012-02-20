@@ -165,7 +165,7 @@ filter = new BayesFilter(true) // Use local storage;
   var like = $("<button class='like'>Like!</button>");
   var dislike = $("<button class='dislike'>Dislike!</button>");
   var rate = $("<button class='rate'>Rate!</button>");
-  var rate_span = $("<span class='rate_result'></span>");
+  var rate_result = $("<span class='rate_result'></span>");
 
   var trainFromUrl = function(url, klass){
     var request = "http://viewtext.org/api/text?url=" + encodeURI(url) + "&callback=?";
@@ -202,6 +202,7 @@ filter = new BayesFilter(true) // Use local storage;
     rateFromUrl(link, result_span);
   });
 
+  $(".title:nth-child(3) a").after(rate_result);
   $(".title:nth-child(3) a").after(rate);
   $(".title:nth-child(3) a").after(dislike);
   $(".title:nth-child(3) a").after(like);
