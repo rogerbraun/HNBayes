@@ -214,8 +214,18 @@ filter = new BayesFilter(true) // Use local storage;
     rateFromUrl(link, result_span);
   });
 
-  $(".title:nth-child(3) a").after(rate_result);
-  $(".title:nth-child(3) a").after(rate);
-  $(".title:nth-child(3) a").after(dislike);
-  $(".title:nth-child(3) a").after(like);
+  var stories = $(".title:nth-child(3) a");
+
+  stories.after(rate_result);
+  stories.after(rate);
+  stories.after(dislike);
+  stories.after(like);
+
+  var rate_all = $("<a href='#'>Rate all stories</a>");
+
+  rate_all.bind("click", function(){
+    $(".rate").trigger("click");
+  });
+
+  $("a:nth-child(8)").after(rate_all);
 });
