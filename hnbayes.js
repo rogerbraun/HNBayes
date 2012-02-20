@@ -168,7 +168,7 @@ filter = new BayesFilter(true) // Use local storage;
 
   like.bind("click", function(event) {
     var target = $(event.target);
-    var link = target.siblings("a")[1];
+    var link = target.siblings("a")[0];
     alert(link.href);
   });
   
