@@ -183,7 +183,11 @@ filter = new BayesFilter(true) // Use local storage;
     $.getJSON(request, function(response){
       var good = filter.categoryProbability(response.content, "good");
       var bad = filter.categoryProbability(response.content, "bad");
-      target.innerHTML = "Good: " + good + ", Bad: " + bad;
+      if(good > bad) {
+        target.innerHTML = "Probably good!";
+      } else {
+        target.innerHTML = "Probably bad!";
+      }
     });
   }
 
