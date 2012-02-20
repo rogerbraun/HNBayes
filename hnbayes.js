@@ -160,6 +160,11 @@ BayesFilter = function(useLocalStorage) {
   
 filter = new BayesFilter(true) // Use local storage;
 
-filter.train("Just a test", "good");
+// Add like / dislike links
 
+  var like = $("<button class='like'>Like!</button>");
+  var dislike = $("<button class='dislike'>Dislike!</button>");
+  
+  $(".title:nth-child(3) a").after(like);
+  $(".title:nth-child(3) a").after(dislike);
 });
