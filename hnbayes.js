@@ -166,10 +166,17 @@ filter = new BayesFilter(true) // Use local storage;
   var dislike = $("<button class='dislike'>Dislike!</button>");
   var rate = $("<button class='rate'>Rate!</button>");
 
+  var trainFromUrl = function(url, klass){
+    var request = "http://viewtext.org/api/text?url=" + encodeURI(url) + "&callback=?";
+    $.getJSON(request, function(response){
+      filter.train(response.content, klass);
+    });
+  }
+
   like.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0];
-    alert(link.href);
+    trainFromUrl(link, "good");
   });
   
   $(".title:nth-child(3) a").after(rate);
