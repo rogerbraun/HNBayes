@@ -166,8 +166,8 @@ filter = new BayesFilter(true) // Use local storage;
 
 // Add like / dislike links
 
-  var like = $("<button class='like'>Like!</button>");
-  var dislike = $("<button class='dislike'>Dislike!</button>");
+  var like = $("<button class='training like'>Like!</button>");
+  var dislike = $("<button class='training dislike'>Dislike!</button>");
   var rate = $("<button class='rate'>Rate!</button>");
   var rate_result = $("<span class='rate_result'></span>");
 
@@ -194,12 +194,14 @@ filter = new BayesFilter(true) // Use local storage;
   like.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0];
+    link.siblings(".training").remove();
     trainFromUrl(link, "good");
   });
   
   dislike.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0];
+    link.siblings("training").remove();
     trainFromUrl(link, "bad");
   });
 
