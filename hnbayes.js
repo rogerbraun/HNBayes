@@ -164,7 +164,15 @@ filter = new BayesFilter(true) // Use local storage;
 
   var like = $("<button class='like'>Like!</button>");
   var dislike = $("<button class='dislike'>Dislike!</button>");
+  var rate = $("<button class='rate'>Rate!</button>");
+
+  like.bind("click", function(event) {
+    var target = $(event.target);
+    var link = target.siblings("a")[1];
+    alert(link.href);
+  }
   
-  $(".title:nth-child(3) a").after(like);
+  $(".title:nth-child(3) a").after(rate);
   $(".title:nth-child(3) a").after(dislike);
+  $(".title:nth-child(3) a").after(like);
 });
