@@ -166,9 +166,9 @@ filter = new BayesFilter(true) // Use local storage;
 
 // Add like / dislike links
 
-  var like = $("<button class='training like'>Like!</button>");
-  var dislike = $("<button class='training dislike'>Dislike!</button>");
-  var rate = $("<button class='rate'>Rate!</button>");
+  var like = $("<span class='training like'><img src='https://github.com/rogerbraun/HNBayes/raw/master/images/thumbs-up.png' /></span>");
+  var dislike = $("<span class='training dislike'><img src='https://github.com/rogerbraun/HNBayes/raw/master/images/thumbs-down.png' /></span>");
+  var rate = $("<span class='rate'><img src='https://github.com/rogerbraun/HNBayes/raw/master/images/eye.png' /></span>");
   var rate_result = $("<span class='rate_result'></span>");
 
   var trainFromUrl = function(url, klass){
