@@ -144,7 +144,8 @@ BayesFilter = function(useLocalStorage) {
 
   this.categoryProbability = function(dokument, klass) {
     var documentProbability = this.documentProbability(dokument, klass);
-    var categoryProbability = this.klasses[klass] / this.documentCount; // think of new name
+    var categoryProbability = this.klasses[klass] / this.documentCount; 
+    // think of new name
     return documentProbability * categoryProbability;
   }
 
