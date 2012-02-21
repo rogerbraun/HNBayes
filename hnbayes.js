@@ -221,13 +221,4 @@ filter = new BayesFilter(true) // Use local storage;
   stories.after(dislike);
   stories.after(like);
 
-  var rate_all = $("<a href='#'>Rate all stories</a>");
-
-  rate_all.bind("click", function(){
-    $(".rate").each(function(index, element){
-      $(element).trigger("click");
-    });
-  });
-
-  $("a:nth-child(8)").after(rate_all);
 });
