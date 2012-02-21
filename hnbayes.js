@@ -197,6 +197,7 @@ if(maybeUrls){
   style.innerHTML = "\
     img.training, img.rate { \
       padding-left:5px; \
+      cursor: pointer; \
     }";
   document.body.appendChild(style);
 
