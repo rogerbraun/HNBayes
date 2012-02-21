@@ -193,7 +193,7 @@ filter = new BayesFilter(true) // Use local storage;
 
   like.bind("click", function(event) {
     var target = $(event.target);
-    var link = target.siblings("a")[0];
+    var link = target.siblings("a")[0].href;
     target.siblings(".training").remove();
     target.remove();
     trainFromUrl(link, "good");
@@ -201,7 +201,7 @@ filter = new BayesFilter(true) // Use local storage;
   
   dislike.bind("click", function(event) {
     var target = $(event.target);
-    var link = target.siblings("a")[0];
+    var link = target.siblings("a")[0].href;
     target.siblings("training").remove();
     target.remove();
     trainFromUrl(link, "bad");
@@ -209,7 +209,7 @@ filter = new BayesFilter(true) // Use local storage;
 
   rate.bind("click", function(){
     var target = $(event.target);
-    var link = target.siblings("a")[0];
+    var link = target.siblings("a")[0].href;
     var result_span = target.siblings(".rate_result")[0];
     rateFromUrl(link, result_span);
   });
