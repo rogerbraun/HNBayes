@@ -235,7 +235,7 @@ if(maybeUrls){
     rateFromUrl(link, result_span);
   });
 
-  var stories = $(".title:nth-child(3) a");
+  var stories = $(".title:nth-child(3) a:nth.child(1)");
   stories.after(rate_result);
   stories.after(rate);
 
