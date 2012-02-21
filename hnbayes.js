@@ -236,14 +236,7 @@ if(maybeUrls){
   });
 
   var stories = $(".title:nth-child(3) a");
-
-  stories.each(function(i, el){
-    $(el).after(rate_result);
-    $(el).after(rate);
-    if(!viewedUrls[el.href]){
-      $(el).after(dislike);
-      $(el).after(like);
-    }
-  });
+  stories.after(rate_result);
+  stories.after(rate);
 
 });
