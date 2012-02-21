@@ -137,7 +137,7 @@ BayesFilter = function(useLocalStorage) {
     var words = this.helpers.getWordSet(dokument);
     for(i = 0; i < words.length; i++){
       var word = words[i];
-      probability = probability * this.weightedProbability(word, klass);
+      probability = probability * this.weightedProbability(word, klass) * 2;
     }     
     return probability;
   }
