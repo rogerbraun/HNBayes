@@ -181,11 +181,10 @@ filter = new BayesFilter(true) // Use local storage;
 // Some styles
   var style = document.createElement("style");
   style.type = "text/css";
-  style.innerHTML = "
-    img.training, img.rate {
-      padding-left:5px;
-    }
-  ";
+  style.innerHTML = "\
+    img.training, img.rate { \
+      padding-left:5px; \
+    }";
   document.body.append(style);
 
   var rateFromUrl = function(url, target){
