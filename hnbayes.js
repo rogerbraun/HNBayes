@@ -230,7 +230,7 @@ if(maybeUrls){
     trainFromUrl(link, "bad");
   });
 
-  rate.bind("click", function(){
+  rate.bind("click", function(event){
     var target = $(event.target);
     var link = target.siblings("a")[0].href;
     var result_span = target.siblings(".rate_result")[0];
