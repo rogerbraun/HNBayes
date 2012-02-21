@@ -240,7 +240,7 @@ if(maybeUrls){
   stories.after(rate);
 
   var newStories = stories.filter(function(i){
-    return !(viewedUrls[this.url]);
+    return !(viewedUrls[this.href]);
   });
  
   newStories.after(dislike);
