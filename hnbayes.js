@@ -193,9 +193,9 @@ filter = new BayesFilter(true) // Use local storage;
       var good = filter.categoryProbability(response.content, "good");
       var bad = filter.categoryProbability(response.content, "bad");
       if(good > bad) {
-        target.innerHTML = "Probably good!";
+        target.innerHTML = " Probably good!";
       } else {
-        target.innerHTML = "Probably bad!";
+        target.innerHTML = " Probably bad!";
       }
     });
   }
