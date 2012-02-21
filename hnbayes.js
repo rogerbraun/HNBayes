@@ -211,7 +211,7 @@ filter = new BayesFilter(true) // Use local storage;
   dislike.bind("click", function(event) {
     var target = $(event.target);
     var link = target.siblings("a")[0].href;
-    target.siblings("training").remove();
+    target.siblings(".training").remove();
     target.remove();
     trainFromUrl(link, "bad");
   });
