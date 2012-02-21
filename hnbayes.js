@@ -239,6 +239,7 @@ if(maybeUrls){
 
   stories.each(function(i, el){
     el = $(el);
+    alert(el.href);
     el.after(rate_result);
     el.after(rate);
     if(!viewedUrls[el.href]){
