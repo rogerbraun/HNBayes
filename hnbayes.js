@@ -164,6 +164,16 @@ BayesFilter = function(useLocalStorage) {
   
 filter = new BayesFilter(true) // Use local storage;
 
+// Load views urls
+
+var viewedUrls = {}
+
+var maybeUrls = localStorage.getItem("viewedUrls");
+
+if(maybeUrls){
+  viewedUrls = Json.parse(maybeUrls);
+}
+
 // Add like / dislike links
 
   var like = $(" <img class='training like' src='https://github.com/rogerbraun/HNBayes/raw/master/images/thumbs-up.png' />");
@@ -176,6 +186,8 @@ filter = new BayesFilter(true) // Use local storage;
     $.getJSON(request, function(response){
       filter.train(response.content, klass);
     });
+    viewedUrls[url] = true;
+    localStorage.setItem("viewedUrls", JSON.stringify(viewedUrls));
   }
 
 // Some styles
@@ -225,9 +237,13 @@ filter = new BayesFilter(true) // Use local storage;
 
   var stories = $(".title:nth-child(3) a");
 
-  stories.after(rate_result);
-  stories.after(rate);
-  stories.after(dislike);
-  stories.after(like);
+  stories.each(function(i, el){
+    el.after(rate_result);
+    el.after(rate);
+    if(!viewedUrls[el.href]){
+      el.after(dislike);
+      el.after(like);
+    }
+  });
 
 });
