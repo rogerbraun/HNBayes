@@ -238,7 +238,6 @@ if(maybeUrls){
   var stories = $(".title:nth-child(3) a");
 
   stories.each(function(i, el){
-    el = $(stories[i]);
     alert(el.href);
     el.after(rate_result);
     el.after(rate);
