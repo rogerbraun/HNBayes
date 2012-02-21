@@ -238,12 +238,11 @@ if(maybeUrls){
   var stories = $(".title:nth-child(3) a");
 
   stories.each(function(i, el){
-    alert(el.href);
-    el.after(rate_result);
-    el.after(rate);
+    $(el).after(rate_result);
+    $(el).after(rate);
     if(!viewedUrls[el.href]){
-      el.after(dislike);
-      el.after(like);
+      $(el).after(dislike);
+      $(el).after(like);
     }
   });
 
