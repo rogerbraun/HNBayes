@@ -205,9 +205,9 @@ if(maybeUrls){
       var good = filter.categoryProbability(response.content, "good");
       var bad = filter.categoryProbability(response.content, "bad");
       if(good > bad) {
-        target.innerHTML = " Probably good! " + (good / bad) + "times more likely.";
+        target.innerHTML = " Probably good! " + (good / bad).toFixed(2) + " times more likely.";
       } else {
-        target.innerHTML = " Probably bad!" + (bad / good) + "times more likely.";
+        target.innerHTML = " Probably bad!" + (bad / good).toFixed(2) + " times more likely.";
       }
     });
   }
