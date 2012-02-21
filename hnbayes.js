@@ -239,4 +239,10 @@ if(maybeUrls){
   stories.after(rate_result);
   stories.after(rate);
 
+  var newStories = stories.filter(function(i){
+    return !(viewedUrls[this.url]);
+  });
+ 
+  newStories.after(dislike);
+  newStories.after(like);
 });
