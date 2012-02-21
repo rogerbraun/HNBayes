@@ -207,7 +207,7 @@ if(maybeUrls){
       if(good > bad) {
         target.innerHTML = " Probably good! " + (good / bad).toFixed(2) + " times more likely.";
       } else {
-        target.innerHTML = " Probably bad!" + (bad / good).toFixed(2) + " times more likely.";
+        target.innerHTML = " Probably bad! " + (bad / good).toFixed(2) + " times more likely.";
       }
     });
   }
