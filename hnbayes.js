@@ -171,7 +171,7 @@ var viewedUrls = {}
 var maybeUrls = localStorage.getItem("viewedUrls");
 
 if(maybeUrls){
-  viewedUrls = Json.parse(maybeUrls);
+  viewedUrls = JSON.parse(maybeUrls);
 }
 
 // Add like / dislike links
