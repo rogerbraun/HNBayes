@@ -185,7 +185,7 @@ filter = new BayesFilter(true) // Use local storage;
     img.training, img.rate { \
       padding-left:5px; \
     }";
-  document.body.append(style);
+  document.body.appendChild(style);
 
   var rateFromUrl = function(url, target){
     var request = "http://viewtext.org/api/text?url=" + encodeURI(url) + "&callback=?";
